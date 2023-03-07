@@ -6,6 +6,7 @@ public class Stock {
     static int numberOfShares;
     static int value;
     static int totalValue;
+    static int withdrawBalance;
 
 
 

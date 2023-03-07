@@ -29,10 +29,15 @@ public class StockPortfolio extends Stock {
             stockPortfolio.printStockPortfolio();
 
         }
+        System.out.println("Total value of stock " + totalValue);
+        System.out.println();
+        System.out.println("enter the value you want to withdraw");
+        withdrawBalance = sc.nextInt();
+        debitBalance();
 
-        System.out.println("Total value of the stock " + totalValue);
+
+        System.out.println("Total value of stock after debit " + totalValue);
     }
-
 
     public static void valueOfEachStock() {
 
@@ -44,7 +49,15 @@ public class StockPortfolio extends Stock {
         totalValue += value;
     }
 
+    public static void debitBalance() {
+        if (withdrawBalance > totalValue) {
+            System.out.println("―Debit amount exceeded account balance.");
+        } else {
+            totalValue = totalValue - withdrawBalance;
 
+        }
+
+    }
     public static void printStockPortfolio() {
         System.out.println("Report for stock");
         System.out.println("Name =" + companyName);
@@ -53,5 +66,4 @@ public class StockPortfolio extends Stock {
         System.out.println("value of stock =" + value);
         System.out.println();
     }
-
 }
